@@ -479,7 +479,7 @@ def lgssm_filter(
         filtered_mean, filtered_cov = _condition_on(pred_mean, pred_cov, H, D, d, R, u, y)
 
         # Predict the next state
-        pred_mean, pred_cov = _predict(filtered_mean, filtered_cov, F, B, b, Q, u)
+        pred_mean, pred_cov = _predict(filtered_mean, filtered_cov, F, B, b, Q, inputs[t+1])
 
         return (ll, pred_mean, pred_cov), (filtered_mean, filtered_cov)
 
